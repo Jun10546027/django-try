@@ -1,0 +1,22 @@
+{% extends "basehtml.html" %}
+
+{% block content %}
+
+<h1>{{title}}</h1>
+
+<!--{{request.user}}-->
+
+<!--{{request.path}}-->
+
+<!--{{user}}-->
+
+<!--{{user.is_authenticated}}-->
+
+
+
+{% for a in blog_post %}
+    {% include 'blog/list_inline.html' with blog_post=a truncatewords=True detail=False %}
+{% endfor %}
+
+
+{% endblock %}

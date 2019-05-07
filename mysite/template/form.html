@@ -1,0 +1,21 @@
+{% extends "basehtml.html"%}
+
+{% block content %}
+
+{% if title %}
+    <h1>{{title}}</h1>
+{% endif %}
+
+                         <!--use csrf for security-->
+<form method="post" action="." enctype="multipart/form-data"> {% csrf_token %}
+<!--    <input type = "text" name="full_name">-->
+<!--    <input type="email" name="email">-->
+<!--    <textarea name="content"></textarea>-->
+    {{ form.as_p }}<!--像是bootstrap一樣的表單（套用就好）-->
+    <button type="submit">send</button>
+</form>
+
+
+{% endblock %}
+
+
